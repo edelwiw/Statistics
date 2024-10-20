@@ -7874,9 +7874,27 @@ $$ f_\theta(x) = \frac{1}{2\theta}e^{-\dfrac{|x|}{\theta}} $$
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="%D0%9E%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2">Оценка параметров<a class="anchor-link" href="#%D0%9E%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2">¶</a></h3><p>Приравниваем теоретические значения математического ожидания и дисперсии к их выборочным аналогам -- выборочному среднему и выборочной дисперсии:</p>
-<p>$$ E[\hat{X}] = 0$$
-$$ \text{Var}[\hat{X}] = 2\theta^2 \rightarrow \text{Var}[\hat{X}] = 2\hat{\theta}^2$$</p>
-<p>$$ \hat{\theta} = \sqrt{\frac{\text{Var}[\hat{X}]}{2}}$$</p>
+<p>$$\hat{\theta} = \sqrt{\frac{1}{2n} \sum_{i = 1}^n x_i ^2}$$</p>
+<p>$$\hat{\theta^2} = \frac{1}{2n}\sum_{i = 1}^n x_i ^2 \rightarrow E(\hat{\theta^2}) = \frac{1}{2n}\sum_{i=1}^{1}, $$</p>
+<p>$$\text{но} ~ x_i \sim iid, ~\text{то}~ E(x^2) = 2\theta^2 \rightarrow E(\hat{\theta^2}) = \theta^2$$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="%D0%9E%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8">Оценка оценки<a class="anchor-link" href="#%D0%9E%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8">¶</a></h2><p>По закону больших чисел получаем:</p>
+<p>$$\frac{1}{n}\sum_{i = 1}^{n} x_i ^2 \rightarrow E(x^2)$$</p>
+<p>$$2\hat{\theta^2} \rightarrow 2\theta^2$$</p>
+<p>$$n \rightarrow \infty ~~~ \hat{\theta} \rightarrow \theta$$</p>
+<p>Отсюда можем понять, что оценка состоятельна</p>
+<p>Найдем математическое ожидание оценки:
+$$E[\hat{\theta}] = E[\theta]$$
+Таким образом, можно сделать вывод, что оценка является несмещенной.</p>
 </div>
 </div>
 </div>
@@ -7901,7 +7919,7 @@ $$ \text{Var}[\hat{X}] = 2\theta^2 \rightarrow \text{Var}[\hat{X}] = 2\hat{\thet
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">N_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">2000</span>
-<span class="n">theta_delta</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1"># 5%</span>
+<span class="n">theta_delta</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1"># 2%</span>
 
 <span class="k">def</span> <span class="nf">laplace_estimation</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">laplace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
