@@ -1,4 +1,4 @@
 # ITMO University statistics labs 
 
 
-## [Lab 1 report](/Lab%201/main.html)
+## [Lab 1 report](https://edelwiw.github.io/Statistics/Lab%201/main.html)
