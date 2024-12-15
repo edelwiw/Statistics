@@ -7,4 +7,6 @@
 
 ## [Lab 3 report](https://edelwiw.github.io/Statistics/Lab%203/main.html)
 
+## [Lab 4 report](https://edelwiw.github.io/Statistics/Lab%204/main.html)
+
 ### Выполнили студенты группы R3338 Александр Иванов, Николай Проворов 
